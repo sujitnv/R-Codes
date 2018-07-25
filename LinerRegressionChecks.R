@@ -1,0 +1,21 @@
+loadhousing <- read.csv("C:/Users/Sujit pc/Desktop/R/housingggg.csv",header = TRUE,stringsAsFactors = FALSE)
+str(loadhousing)
+summary(loadhousing)
+hist(loadhousing$price)
+qqnorm(loadhousing$price)
+plot(loadhousing$lotsize,loadhousing$price)
+
+fittttt2222 <- lm(price~.,data = loadhousing)
+summary(fittttt)
+hist(fittttt$residuals)
+vif(fittttt)
+loadhousing <- loadhousing[-c(330),]
+outlierTest(fittttt)
+install.packages("car")
+library(car)
+plot(loadhousing$lotsize,fittttt2222$residuals)
+#qqnorm(loadhousing$lotsize,fittttt2222$residuals)
+
+predict(fittttt2222,testdata)
+cor(loadhousing$lotsize,loadhousing$price)
+cor(loadhousing$fullbase,loadhousing$price)
